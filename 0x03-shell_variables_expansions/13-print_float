@@ -1,2 +1,2 @@
 #!/bin/bash
-printf -v T "%.2f" <<< "$(date +%N)/1000000000"
+printf -v T "%.2f\n" $NUM
