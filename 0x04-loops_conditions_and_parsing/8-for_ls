@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#prints files and folders in the current directory
+#after the '-'
+new_list=$(ls)
+for i in $new_list; do
+  echo "$i" | cut -d '-' -f2
+done
