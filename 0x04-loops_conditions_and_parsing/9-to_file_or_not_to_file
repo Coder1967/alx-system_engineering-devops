@@ -6,9 +6,10 @@ then
 	echo "school file exists"
 else
 	echo "school file does not exist"
+	exit
 fi
 
-if  [ -s $file ]
+if  [[ -s $file ]]
 then
 	echo "school file is not empty"
 else
