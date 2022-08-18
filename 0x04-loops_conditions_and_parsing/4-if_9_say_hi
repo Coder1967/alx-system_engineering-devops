@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#prints 'Best School' unless on the 9th iterartion then print 'Hi afterwards
 i=1
 
 while [ $i -le 10 ]
