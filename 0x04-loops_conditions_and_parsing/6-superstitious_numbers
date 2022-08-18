@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-: '
-prints the numbers from 1 to 20 but prints
-bad luck from china, japan, italy on the
-4th, 9th and 17th iteration respectively
-'
+#prints the numbers from 1 to 20 but prints
+#bad luck from china, japan, italy on the
+#4th, 9th and 17th iteration respectively
+
 i=1
 while [ $i -le 20 ]
 do
