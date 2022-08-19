@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#prints the name as well as the id of bash
+pgrep -l bash
