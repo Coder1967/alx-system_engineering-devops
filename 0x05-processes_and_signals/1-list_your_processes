@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#prints in a user format  all processes, for all users, including those which might not have a TTY
+ps -A ufx
