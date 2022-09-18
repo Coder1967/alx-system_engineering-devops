@@ -1,0 +1,16 @@
+https://photos.app.goo.gl/XeCihD91VZ7rWQJCA
+
+Another webserver and application server is added to reduce the workload on a single server.
+
+A load balancer is added to distribute the requests among the webservers. This load balancer employs the weighted round-robin algorithm; it paases number of requests to a server using the weight(hardware specs) of the server.
+The load balancer uses an Active-Active setup where both servers work together as opposed to an Active-Passive one where only one carries out the functionalities and the other acts as something to fallback on incase of failure of the active one.
+
+A database Master-slave replica works in a way that the master database handles all the functionalities like reading, writing etc of the database and for each changes made in the master, the slave is updated so that it is a perfect copy of the master. In a situation where there's a problem with the master, the slave can takeover and handle all of its functionalities.
+
+	Problems with this setup
+	==========================
+One glaring issue is the total absence of security. requests are made with http rather than the more secure https and our setup doesn't employ firewalls.
+
+Another one is the lack of a monitor to help us observe the workings of the setup.
+
+There's also a chance of failure as we only have a single database(the spof of this setup).

@@ -1,0 +1,19 @@
+https://photos.app.goo.gl/92276L5hkhKGeDxs9
+
+	New additions
+	==============
+
+Firewalls: to improve security of the system.
+
+ssl: improves security bt encrypting clients requests used to safeguard sensitive info like passwords. The encryption can only be decrypted by the target server.
+
+https: far more secure than http.
+
+monitors: to observe the ongoings in our system. They help in error detections.
+
+	issues
+	======
+
+Having only one database incharge of writes is a problem as if in a scenario where that database is down, the website would lose a major functionality.
+
+As all the servers have the same component, if tgere's an error it'd affect all the servers as they are identical in structure.

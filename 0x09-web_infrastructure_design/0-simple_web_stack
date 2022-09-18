@@ -1,0 +1,25 @@
+https://photos.app.goo.gl/nGQVp3T7VDnuQT4u9
+
+
+
+
+
+1. A server is simply a computer which receives requests from a client and gives a response of some type. It can technically be any computer at all but certain ones are specially developed to be servers and they're aren't equipped with either a screen or a keyboard.
+
+2. The domain name acts as a connector between the ip address of the server hosting the website and the client's system.
+
+3. www.foobar.com is coverted to the ip address of the website using the A record.
+
+4. The webserver(running nginx) returns static webpages and content to the client. it is used to return static webpages. it simply returns a website without any sort of backend calculations.
+
+5. the aplication server carries out calculations as well as gather information by working with the database. it helps in returning dynamic webpages and can be used with a web server.
+
+6. The database stores data in a way it can be easily acessed, managed and used. It supplies data to the application server so it can carry out calculations with it.
+
+7. The client's computer and the server communicate with each other using http(a textual and stateless protocol)
+
+8. SPOF: this stands for single point of failure, it simply refers to a scenario where the website doesn't funtion because of a fault.
+
+9. Downtime when maintenance is needed is when the website can't be acessed as it is down so as to be maintained. it could be the software that is to be updated.
+
+10. Cannot scale if too much incoming traffic is a scenario where the load on the server is too much as a result of alot of people visiting the website. A good solution would be to use a load balancer.
