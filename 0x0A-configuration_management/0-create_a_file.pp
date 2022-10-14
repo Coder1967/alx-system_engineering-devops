@@ -1,3 +1,4 @@
+#creates s file 'school' in /tmp/
 
 file { '/tmp/school':
 mode    => '0744',
