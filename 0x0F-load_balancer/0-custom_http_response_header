@@ -1,4 +1,5 @@
-#!/usr/bin/bash env
+#!/usr/bin/env bash
+#sudo service nginx restart
 #sets up a new server and adds a header 'X-Served-By'
 sudo apt-get -y update
 sudo apt-get -y upgrade
