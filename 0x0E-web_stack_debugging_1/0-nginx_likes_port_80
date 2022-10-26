@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #a fix for the nginx webserver running on the ubuntu container which doesn't listen for conections on port 80
-listen1="\\\tlisten 80 default_server;\n\tlisten [::]:80 default_server ipv6only=on;"
+listen1="\\\tlisten 80 default_server;\n\tlisten [::]:80 default_server;"
 sudo sed -i "21 $listen1" /etc/nginx/sites-available/default
 sudo service nginx restart
 sudo service nginx reload
