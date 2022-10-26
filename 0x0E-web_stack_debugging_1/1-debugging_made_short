@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #a fix for the nginx webserver running on the ubuntu container which doesn't listen for conections on port 80
-sudo sed -i "21 '\\\tlisten 80 default_server;\n\tlisten [::]:80 default_server ipv6only=on;'" /etc/nginx/sites-available/default
-sudo pkill nginx
-sudo service nginx start
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx start
+pkill nginx
