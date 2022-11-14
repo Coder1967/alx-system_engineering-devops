@@ -6,8 +6,8 @@ Employee EMPLOYEE_NAME is done with
 tasks(NUMBER_OF_DONE_TASKS/TOTAL_NUMBER_OF_TASKS):
 """
 if __name__ == "__main__":
-    from sys import argv
     import requests
+    from sys import argv
 
     i = 0
     name = ""
@@ -18,11 +18,11 @@ if __name__ == "__main__":
                        params={"id": argv[1]})
     name = req.json()[0].get("name")
     req = requests.get("https://jsonplaceholder.typicode.com/todos",
-                       params={"userId": argv[1], "completed": "true"})
-    complete = len(req.json())
-    req = requests.get("https://jsonplaceholder.typicode.com/todos",
                        params={"userId": argv[1]})
     total = len(req.json())
+    req = requests.get("https://jsonplaceholder.typicode.com/todos",
+                       params={"userId": argv[1], "completed": "true"})
+    complete = len(req.json())
     print("Employee {} is done with tasks({:d}/{:d}):".format(
             name, complete, total))
     while i < len(req.json()):
