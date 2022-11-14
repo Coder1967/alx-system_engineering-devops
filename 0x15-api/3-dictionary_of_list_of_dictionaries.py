@@ -4,37 +4,15 @@
 2. File name must be: todo_all_employees.json
 """
 if __name__ == "__main__":
-    import json
-    import requests
-
-    url_user = "https://jsonplaceholder.typicode.com/users"
-    url_todo = "https://jsonplaceholder.typicode.com/todos"
-    final_dict = {}
-    new_list = []
-    i = 1
-    name = ""
-    req = requests.get(url_user)
-    users = len(req.json()) + 1
-
-    while i <= users:
-        j = 0
-        new_list = []
-        req = requests.get(url_todo, params={"userId": i})
-        todos = len(req.json())
-        while j < todos:
-            req = requests.get(url_todo, params={"userId": i})
-            title = req.json()[i].get("title")
-            completion = req.json()[i].get("completed")
-            req = requests.get(url_user, params={"id": i})
-            name = req.json()[0].get("username")
-            new_dict = {}
-            new_dict["username"] = name
-            new_dict["task"] = title
-            new_dict["completed"] = completion
-            new_list.append(new_dict)
-            j += 1
-        final_dict["{}".format(i)] = new_list
-        i += 1
+    url = "https://jsonplaceholder.typicode.com/"
+    users = requests.get(url + "users").json()
 
     with open("todo_all_employees.json", "w") as f:
-        json.dump(final_dict, f)
+        json.dump({
+            u.get("id"): [{
+                "task": t.get("title"),
+                "completed": t.get("completed"),
+                "username": u.get("username")
+            } for t in requests.get(url + "todos",
+                                    params={"userId": u.get("id")}).json()]
+            for u in users}, f)
