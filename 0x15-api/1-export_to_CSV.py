@@ -11,12 +11,14 @@ if __name__ == "__main__":
 
     i = 0
     params = {"id": argv[1]}
-    req = requests.get("https://jsonplaceholder.typicode.com/users", params=params)
+    req = requests.get("https://jsonplaceholder.typicode.com/users",
+                       params=params)
     name = req.json()[0].get("username")
-    req = requests.get("https://jsonplaceholder.typicode.com/todos", params={"userId": argv[1]})
+    req = requests.get("https://jsonplaceholder.typicode.com/todos",
+                       params={"userId": argv[1]})
 
     with open('{}.csv'.format(argv[1]), 'w') as csvfile:
-        writer = csv.writer(csvfile, delimiter=',')
+        writer = csv.writer(csvfile, delimiter=',', quoting=csv.QUOTE_ALL)
         while i < len(req.json()):
             title = req.json()[i].get("title")
             status = req.json()[i].get("completed")
