@@ -28,9 +28,9 @@ if __name__ == "__main__":
             req = requests.get(url_user, params={"id": i})
             name = req.json()[0].get("username")
             new_dict = {}
+            new_dict["username"] = name
             new_dict["task"] = title
             new_dict["completed"] = completion
-            new_dict["username"] = name
             new_list.append(new_dict)
             j += 1
         final_dict["{}".format(i)] = new_list
