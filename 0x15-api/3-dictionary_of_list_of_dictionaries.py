@@ -11,12 +11,12 @@ if __name__ == "__main__":
     url_todo = "https://jsonplaceholder.typicode.com/todos"
     final_dict = {}
     new_list = []
-    i = 0
+    i = 1
     name = ""
     req = requests.get(url_user)
-    users = len(req.json())
+    users = len(req.json()) + 1
 
-    while i < users:
+    while i <= users:
         j = 0
         new_list = []
         req = requests.get(url_todo, params={"userId": i})
