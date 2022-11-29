@@ -8,6 +8,13 @@
 import requests
 
 
+def attach(h_list, res):
+    """
+    attaches the tittles to hot_list
+    """
+    for child in res.get("children"):
+        h_list.append(child.get("data").get("title"))
+
 def recurse(subreddit, hot_list=[], count=0, after=""):
     """
     definition of the above descriped function
@@ -27,8 +34,7 @@ Gecko/geckotrail Firefox/firefoxversion"}
     res = r.json().get("data")
     count += res.get("dist")
     after = res.get("after")
-    """for child in res.get("children"):
-        hot_list.append(child.get("data").get("title"))"""
+    attach(hot_list, res)
     if after is None:
         return hot_list
     return recurse(subreddit, hot_list, count, after)
