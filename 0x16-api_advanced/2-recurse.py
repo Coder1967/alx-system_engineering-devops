@@ -15,6 +15,7 @@ def attach(h_list, res):
     for child in res.get("children"):
         h_list.append(child.get("data").get("title"))
 
+
 def recurse(subreddit, hot_list=[], count=0, after=""):
     """
     definition of the above descriped function
