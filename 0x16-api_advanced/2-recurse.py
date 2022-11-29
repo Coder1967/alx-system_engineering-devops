@@ -17,7 +17,7 @@ Gecko/geckotrail Firefox/firefoxversion"}
     params = {
             "limit": 50,
             "after": after,
-            count: count
+            "count": count
             }
     r = requests.get("https://www.reddit.com/r/{}/hot/.json".format(subreddit),
                      params=params, headers=headers, allow_redirects=False)
