@@ -27,8 +27,8 @@ Gecko/geckotrail Firefox/firefoxversion"}
     res = r.json().get("data")
     count += res.get("dist")
     after = res.get("after")
-    for child in res.get("children"):
-        #hot_list.append(child.get("data").get("title"))
+    """for child in res.get("children"):
+        hot_list.append(child.get("data").get("title"))"""
     if after is None:
         return hot_list
     return recurse(subreddit, hot_list, count, after)
