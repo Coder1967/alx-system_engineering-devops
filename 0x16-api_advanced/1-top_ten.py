@@ -15,6 +15,9 @@ Gecko/geckotrail Firefox/firefoxversion"}
 
     r = requests.get("https://www.reddit.com/r/{}/hot/.json".format(subreddit),
                      params=params, headers=headers, allow_redirects=False)
-    while i < 10:
-        print(r.json()["data"]["children"][i]["data"]["title"])
-        i += 1
+    if r.status_code == 200:
+        while i < 10:
+            print(r.json()["data"]["children"][i]["data"]["title"])
+            i += 1
+    else:
+        print(None)
