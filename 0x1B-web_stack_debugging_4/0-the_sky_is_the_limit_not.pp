@@ -8,5 +8,5 @@ exec {'replace':
 
 exec {'restart':
   provider => shell,
-  command  => 'sudo systemctl restart nginx'
+  command  => 'sudo service nginx restart'
 }
